@@ -13,7 +13,11 @@ public class ObjectiveFooBar {
         objectiveFooBar.addPattern(5, "Bar");
         objectiveFooBar.addPattern(11, "Too");
         objectiveFooBar.addPattern(22, "Moo");
-        objectiveFooBar.print(100);
+        objectiveFooBar.print(40);
+
+        ObjectiveFooBar objectiveFooBar2 = new ObjectiveFooBar();
+        objectiveFooBar2.addPattern(4, "Foo");
+        objectiveFooBar2.print(40);
     }
 
     private void addPattern(int divider, String pattern) {
