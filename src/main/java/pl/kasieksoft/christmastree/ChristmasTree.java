@@ -3,23 +3,23 @@ package pl.kasieksoft.christmastree;
 public class ChristmasTree {
 
     public static void main(String[] args) {
-        printChristmasTree(10);
+        printChristmasTree(21);
     }
 
     private static void printChristmasTree(int size) {
         for (int i = 0; i <= size; i++) {
-            printLine(size - i, " ");
-            printLine(2 * i - 1, "*");
+            printChars(size - i, ' ');
+            printChars(2 * i - 1, '*');
             System.out.println();
         }
-        printLine(size - 2, " ");
-        printLine(2, "*");
+        printChars(size - 2, ' ');
+        printChars(2, '*');
 
     }
 
-    private static void printLine(int howMany, String whichString) {
-        for (int i = 0; i < howMany; i++) {
-            System.out.print(whichString);
+    private static void printChars(int count, char charToPrint) {
+        for (int i = 0; i < count; i++) {
+            System.out.print(charToPrint);
         }
     }
 }
