@@ -8,13 +8,10 @@ public class PascalTriangle {
 
     private static void printPascalTriangle(int rows) {
         for (int i = 0; i < rows; i++) {
-
             printSpaces((rows - i) * 3);
-
             for (int j = 0; j <= i; j++) {
                 System.out.printf("%6d", pascalValue(i, j));
             }
-
             System.out.println();
         }
     }
@@ -28,5 +25,4 @@ public class PascalTriangle {
             System.out.print(' ');
         }
     }
-
 }
