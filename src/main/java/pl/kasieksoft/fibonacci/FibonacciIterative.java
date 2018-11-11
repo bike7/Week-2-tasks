@@ -23,5 +23,3 @@ public class FibonacciIterative {
         return currentNumber;
     }
 }
-
-
