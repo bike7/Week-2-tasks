@@ -1,16 +1,17 @@
 package pl.kasieksoft.sort;
 
-public class BubbleSort {
+public class BubbleSort implements SortingMethod {
 
     public static void main(String[] args) {
         int[] arr1 = {10, 34, 2, 56, 7, 67, 88, 42};
-        int[] arr2 = sort(arr1);
+        int[] arr2 = new BubbleSort().sort(arr1);
         for (int i : arr2) {
             System.out.println(i);
         }
     }
 
-    private static int[] sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         int temp;
         for (int i = 0; i < array.length; i++) {
             for (int j = 1; j < (array.length - i); j++) {

@@ -1,17 +1,17 @@
 package pl.kasieksoft.sort;
 
-public class SelectionSort {
+public class SelectionSort implements SortingMethod {
 
     public static void main(String[] args) {
         int[] arr1 = {10, 34, 2, 56, 7, 67, 88, 42};
-        int[] arr2 = sort(arr1);
+        int[] arr2 = new SelectionSort().sort(arr1);
         for (int i : arr2) {
             System.out.println(i);
         }
     }
 
-    static int[] sort(int[] array) {
-
+    @Override
+    public int[] sort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int index = i;
             for (int j = i + 1; j < array.length; j++)

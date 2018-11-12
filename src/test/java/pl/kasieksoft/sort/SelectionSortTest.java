@@ -13,7 +13,7 @@ class SelectionSortTest {
         //given
         int[] array = {10, 34, 2, 56, 7, 67, 88, 42, 35, 12};
         //when
-        int[] result = SelectionSort.sort(array);
+        int[] result = new SelectionSort().sort(array);
         //then
         assertTrue(isSorted(result));
     }
@@ -24,7 +24,7 @@ class SelectionSortTest {
         int[] array = randomArray(10_000);
         //when
         long startTime = System.currentTimeMillis();
-        int[] result = SelectionSort.sort(array);
+        int[] result = new SelectionSort().sort(array);
         System.out.println("Sorting took " + (System.currentTimeMillis() - startTime) + " ms.");
         //then
         assertTrue(isSorted(result));
@@ -35,7 +35,7 @@ class SelectionSortTest {
         //given
         int[] array = new int[10];
         //when
-        int[] result = SelectionSort.sort(array);
+        int[] result = new SelectionSort().sort(array);
         //then
         assertTrue(isSorted(result));
     }
@@ -45,7 +45,7 @@ class SelectionSortTest {
         //given
         int[] array = {7, 7, 7, 7, 7, 7, 7, 7, 7, 7};
         //when
-        int[] result = SelectionSort.sort(array);
+        int[] result = new SelectionSort().sort(array);
         //then
         assertTrue(isSorted(result));
     }
@@ -55,7 +55,7 @@ class SelectionSortTest {
         //given
         int[] array = {97, 77, 75, 64, 32, 30, 25, 14, 7, 2};
         //when
-        int[] result = SelectionSort.sort(array);
+        int[] result = new SelectionSort().sort(array);
         //then
         assertTrue(isSorted(result));
     }
