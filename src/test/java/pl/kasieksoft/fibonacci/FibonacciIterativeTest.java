@@ -44,4 +44,5 @@ class FibonacciIterativeTest {
         //then
         assertThrows(IllegalArgumentException.class, () -> FibonacciIterative.fibonacci(fibonacciNumberInOrder));
     }
+
 }

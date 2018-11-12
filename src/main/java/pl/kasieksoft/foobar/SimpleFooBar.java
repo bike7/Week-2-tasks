@@ -4,15 +4,16 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SimpleFooBar {
+public class SimpleFooBar implements FooBar {
 
     public static void main(String[] args) {
-        for (String line : foobar(100)) {
+        for (String line : new SimpleFooBar().foobar(100)) {
             System.out.println(line);
         }
     }
 
-    static Collection<String> foobar(int count) {
+    @Override
+    public Collection<String> foobar(int count) {
         if (count < 0) {
             throw new IllegalArgumentException("Please input a positive number");
         }
