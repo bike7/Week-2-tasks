@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SelectionSortTest {
 
-    SortingMethod sortingMethod;
+    private SortingMethod sortingMethod;
 
     @BeforeEach
     void setup() {
