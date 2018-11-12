@@ -1,22 +1,34 @@
 package pl.kasieksoft.foobar;
 
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+
 public class SimpleFooBar {
 
     public static void main(String[] args) {
-        foobar(100);
+        for (String line : foobar(100)) {
+            System.out.println(line);
+        }
     }
 
-    private static void foobar(int count) {
-        System.out.println(0);
+    static Collection<String> foobar(int count) {
+        if (count < 0) {
+            throw new IllegalArgumentException("Please input a positive number");
+        }
+        List<String> result = new LinkedList<>();
+        result.add("0");
         for (int i = 1; i <= count; i++) {
-            System.out.print(i + " ");
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(i).append(" ");
             if (i % 3 == 0) {
-                System.out.print("Foo");
+                stringBuilder.append("Foo");
             }
             if (i % 5 == 0) {
-                System.out.print("Bar");
+                stringBuilder.append("Bar");
             }
-            System.out.println();
+            result.add(stringBuilder.toString());
         }
+        return result;
     }
 }
