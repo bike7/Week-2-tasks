@@ -19,14 +19,18 @@ public class ObjectiveFooBar implements FooBar {
         objectiveFooBar2.print(40);
     }
 
-    private void addPattern(int divider, String pattern) {
+    void addPattern(int divider, String pattern) {
         patterns.put(divider, pattern);
     }
 
     @Override
     public Collection<String> foobar(int count) {
+        if (count < 0) {
+            throw new IllegalArgumentException("Please input a positive value");
+        }
         List<String> result = new ArrayList<>();
-        for (int i = 0; i <= count; i++) {
+        result.add("0");
+        for (int i = 1; i <= count; i++) {
             result.add(i + " " + addWords(i));
         }
         return result;
