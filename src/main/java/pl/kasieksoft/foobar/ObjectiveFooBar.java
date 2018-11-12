@@ -1,9 +1,8 @@
 package pl.kasieksoft.foobar;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-public class ObjectiveFooBar {
+public class ObjectiveFooBar implements FooBar {
 
     private Map<Integer, String> patterns = new HashMap<>();
 
@@ -24,15 +23,24 @@ public class ObjectiveFooBar {
         patterns.put(divider, pattern);
     }
 
-    private void print(int count) {
+    @Override
+    public Collection<String> foobar(int count) {
+        List<String> result = new ArrayList<>();
         for (int i = 0; i <= count; i++) {
-            System.out.println(i + " " + addWords(i));
+            result.add(i + " " + addWords(i));
+        }
+        return result;
+    }
+
+    private void print(int count) {
+        for (String line : foobar(count)) {
+            System.out.println(line);
         }
     }
 
     private String addWords(int currentNumber) {
         StringBuilder result = new StringBuilder();
-        patterns.keySet().forEach(i -> result.append(FooBar.addWord(currentNumber, i, patterns.get(i))));
+        patterns.keySet().forEach(i -> result.append(MyFooBar.addWord(currentNumber, i, patterns.get(i))));
         return result.toString();
     }
 }
